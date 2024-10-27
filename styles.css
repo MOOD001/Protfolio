@@ -1,0 +1,202 @@
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+  }
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 2s;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero .visible{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  animation: fadeIn 2s;
+}
+.highlight {
+  color: #00b4d8;
+  text-shadow: 0 0 10px #00b4d8, 0 0 20px #0077b6;
+}
+
+.btn {
+  margin-top: 1rem;
+  padding: 10px 20px;
+  background: #00b4d8;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn:hover {
+  background: #0077b6;
+  transform: scale(1.1);
+}
+
+/* About Section */
+.about {
+  padding: 50px;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  margin: 50px auto;
+  max-width: 900px;
+  border-radius: 10px;
+  animation: slideIn 1.5s ease-out;
+}
+
+.skills {
+  display: flex;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill {
+  background: #0077b6;
+  padding: 10px 20px;
+  border-radius: 50px;
+  animation: popIn 0.7s ease-in-out;
+}
+
+/* Projects Section */
+.projects {
+  padding: 50px;
+}
+
+.projects h2{
+    padding: 40px;
+}
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  gap: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img{
+  border: double;
+  border-width: 10px;
+  border-radius: 20px; 
+  border-color: #0077b6;
+  width: 90%;
+  height: 70%;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #001f3f;
+  margin-top: 50px;
+}
+
+.socials a {
+  margin: 0 10px;
+  color: #00b4d8;
+  text-decoration: none;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+}
+
+/* Keyframe Animations */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideIn {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  100% { transform: scale(1); }
+}
+
+/* Hide the content wrapper initially */
+.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* When visible, the content will fade in smoothly */
+  .visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+
+
+/* Background Animation Styles */
+.shape {
+    position: absolute;
+    border-radius: 50%; /* Makes circles */
+    opacity: 0;
+    animation: appear 0.6s forwards; /* Animate the appearance */
+    pointer-events: none; /* Ensure shapes don't interfere with mouse events */
+    transition: transform 0.3s ease; /* Smooth scaling on hover */
+  }
+  
+  /* Keyframes for shape appearing and disappearing */
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      transform: scale(0.5); /* Start smaller */
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2); /* Slightly grow */
+    }
+    100% {
+      opacity: 0; /* Fade out */
+    }
+  }
